@@ -19,8 +19,8 @@ RUN DEBIAN_FRONTEND=noninteractive \
     echo "APT::Install-Recommends \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
     echo "APT::Install-Suggests \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
     apt-get clean && \
-    apt-get -q -y update && \
-    apt-get -q -y install \
+    apt-get -q -y --force-yes update && \
+    apt-get -q -y --force-yes install \
     ca-certificates \
     postgresql-client-$PG_MAJOR \
     mysql-client \
